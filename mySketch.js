@@ -13,7 +13,7 @@ var strokeSize = 0.1;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(20);
+  background(255);
   frameRate(40);
 	
   mic = new p5.AudioIn();
@@ -44,10 +44,10 @@ function draw() {
 	   line(x1, y1, x2, y2);
 	//line(x3, y3, x4, y4);
 			
-	x1 = sin(t/10) * 100;
-	y1 = cos(t/10) * 100;
-        x2 = sin(t/10) * 10;
-        y2 = cos(t/10) * 10;
+	x1 = sin(t/10) * size;
+	y1 = cos(t/10) * size;
+        x2 = sin(size/10) * 10;
+        y2 = cos(size/10) * 10;
 			
 		//x3 = sin(b/10) * size;
 	        //y3 = cos(b/10) * size;
