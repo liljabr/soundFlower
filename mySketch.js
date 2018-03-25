@@ -6,6 +6,7 @@ var NUM_LINES = 1;
 var mic, fft, peakDetect;
 var looping = false;
 var strokeSize = 0.1;
+var ellipseWidth = 10;
 
 /*function preload(){
   sound = loadSound('https://www.openprocessing.org/sketch/524719/files/Between_Mountains_-_Into_the_Dark.mp3');
@@ -33,8 +34,13 @@ function draw() {
 	var spectrum = fft.analyze();
 	var maxSpectrum = 300;
 	peakDetect.update(fft);
-	var pitch = peakDetect.isDetected;
-	
+
+	  if ( peakDetect.isDetected ) {
+    ellipseWidth = 300;
+  } else {
+    ellipseWidth *= 0.95;
+  }
+	  ellipse(width/2, height/2, ellipseWidth, ellipseWidth);
 
 	for (var j = 0; j < spectrum.lenght; i++) {
 		var amp = spectrum[j];
@@ -49,7 +55,7 @@ function draw() {
 	//line(x3, y3, x4, y4);
 			
 	x1 = sin(t/10) * 100;
-	y1 = cos(t/10) * pitch;
+	y1 = cos(t/10) * 100;
         x2 = sin(size/10) * 10;
         y2 = cos(size/10) * 10;
 			
