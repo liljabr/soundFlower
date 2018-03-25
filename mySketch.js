@@ -1,4 +1,4 @@
-function myMove() {
+/*function myMove() {
   var elem = document.getElementById("animate");   
   var pos = 0;
   var id = setInterval(frame, 5);
@@ -11,7 +11,7 @@ function myMove() {
       elem.style.left = pos + 'px'; 
     }
   }
-}
+}*/
 
 
 /*var t = 1;
