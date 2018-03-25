@@ -3,7 +3,7 @@ var b = 1;
 var x1, y1, x2, y2, x3, y3, x4, y4;
 var NUM_LINES = 1;
 
-var mic, fft;
+var mic, fft, peakDetect;
 var looping = false;
 var strokeSize = 0.1;
 
@@ -20,6 +20,8 @@ function setup() {
   mic.start();
   fft = new p5.FFT(0.9, 512); // (smoothing, range)
   fft.setInput(mic);
+	
+  peakDetect = new p5.PeakDetect(4000, 12000, 0.2);
 }
 
 function draw() {
@@ -30,6 +32,8 @@ function draw() {
 	
 	var spectrum = fft.analyze();
 	var maxSpectrum = 300;
+	peakDetect.update(fft);
+	var pitch = peakDetect.isDetected;
 	
 
 	for (var j = 0; j < spectrum.lenght; i++) {
@@ -44,8 +48,8 @@ function draw() {
 	   line(x1, y1, x2, y2);
 	//line(x3, y3, x4, y4);
 			
-	x1 = sin(t/10) * size;
-	y1 = cos(t/10) * size;
+	x1 = sin(t/10) * 100;
+	y1 = cos(t/10) * pitch;
         x2 = sin(size/10) * 10;
         y2 = cos(size/10) * 10;
 			
