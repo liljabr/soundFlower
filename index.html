@@ -8,5 +8,16 @@
   </head>
   <body>
     hi there everybody
+    <script language="javascript" type="text/javascript" src="path/to/p5.sound.js">
+    function preload() {
+  soundFormats('mp3', 'ogg');
+  mySound = loadSound('assets/doorbell.mp3');
+}
+
+function setup() {
+  mySound.setVolume(0.1);
+  mySound.play();
+}
+    </script>
   </body>
 </html>
