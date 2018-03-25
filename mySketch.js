@@ -1,20 +1,4 @@
-/*function myMove() {
-  var elem = document.getElementById("animate");   
-  var pos = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.top = pos + 'px'; 
-      elem.style.left = pos + 'px'; 
-    }
-  }
-}*/
-
-
-/*var t = 1;
+var t = 1;
 var b = 1;
 var x1, y1, x2, y2, x3, y3, x4, y4;
 var NUM_LINES = 1;
@@ -22,13 +6,13 @@ var NUM_LINES = 1;
 var mic, fft;
 var looping = false;
 var strokeSize = 0.1;
-var b = p5.board('/dev/cu.usbmodem1421', 'arduino');*/
+var b = p5.board('/dev/cu.usbmodem1421', 'arduino');
 
 /*function preload(){
   sound = loadSound('https://www.openprocessing.org/sketch/524719/files/Between_Mountains_-_Into_the_Dark.mp3');
 }*/
 
-/*function setup() {
+function setup() {
 	createCanvas(windowWidth, windowHeight);
   background(255);
 	frameRate(40);
@@ -64,14 +48,14 @@ function draw() {
 				x1 = sin(t/10) * size;
 	      y1 = cos(t/10) * size;
         x2 = sin(size/10) * 10;
-        y2 = cos(size/10) * 10;*/
+        y2 = cos(size/10) * 10;
 			
 			  //x3 = sin(b/10) * size;
 	      //y3 = cos(b/10) * size;
         //x4 = sin(size/10) * 10;
         //y4 = cos(size/10) * 10;
 		
- /* }
+ }
 	}
   t += 0.2;
 	//b += 0.8;
@@ -85,4 +69,4 @@ function draw() {
    noLoop();
  else
    loop();
-}*/
+}
