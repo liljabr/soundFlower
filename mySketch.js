@@ -14,7 +14,7 @@ var b = p5.board('/dev/cu.usbmodem1421', 'arduino');
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-  background(255);
+  background(20);
 	frameRate(40);
 	
 	mic = new p5.AudioIn();
