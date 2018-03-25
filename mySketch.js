@@ -22,7 +22,7 @@ function setup() {
   fft = new p5.FFT(0.9, 512); // (smoothing, range)
   fft.setInput(mic);
 	
-  peakDetect = new p5.PeakDetect(4000, 12000, 0.2);
+  peakDetect = new p5.PeakDetect(4000, 5000, 0.2);
 }
 
 function draw() {
