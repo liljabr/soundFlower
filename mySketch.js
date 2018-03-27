@@ -40,7 +40,8 @@ function draw() {
   } else {
     ellipseWidth *= 0.95;
   }
-	  ellipse(width/2, height/2, ellipseWidth, ellipseWidth);
+	ellipse(width/2, height/2, ellipseWidth, ellipseWidth);
+	translate(width/2, height/2);
 
 	for (var j = 0; j < spectrum.lenght; i++) {
 		var amp = spectrum[j];
@@ -54,8 +55,8 @@ function draw() {
 	   line(x1, y1, x2, y2);
 	//line(x3, y3, x4, y4);
 			
-	x1 = sin(t/10) * 100;
-	y1 = cos(t/10) * 100;
+	x1 = sin(t/10) * size;
+	y1 = cos(t/10) * size;
         x2 = sin(size/10) * 10;
         y2 = cos(size/10) * 10;
 			
