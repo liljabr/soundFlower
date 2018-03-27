@@ -29,7 +29,7 @@ function draw() {
   stroke(0);
   strokeWeight(strokeSize);
 	
-	translate(width/2, height/2);
+	//translate(width/2, height/2);
 	
 	var spectrum = fft.analyze();
 	var maxSpectrum = 300;
