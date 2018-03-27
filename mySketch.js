@@ -30,7 +30,7 @@ function draw() {
   stroke(0);
   strokeWeight(strokeSize);
 	
-	//translate(width/2, height/2);
+	translate(width/2, height/2);
 	
 	var spectrum = fft.analyze();
 	var maxSpectrum = 300;
@@ -41,7 +41,6 @@ function draw() {
   } else {
     peakTop *= 0.2;
   }
-	ellipse(width/2, height/2, ellipseWidth, ellipseWidth);
 
 	for (var j = 0; j < spectrum.lenght; i++) {
 		var amp = spectrum[j];
