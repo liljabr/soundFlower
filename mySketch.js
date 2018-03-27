@@ -1,5 +1,6 @@
 var t = 1;
 var b = 1;
+var top = 0;
 var x1, y1, x2, y2, x3, y3, x4, y4;
 var NUM_LINES = 1;
 
@@ -36,9 +37,9 @@ function draw() {
 	peakDetect.update(fft);
 
 	  if ( peakDetect.isDetected ) {
-    ellipseWidth = 300;
+    top = 200;
   } else {
-    ellipseWidth *= 0.95;
+    top *= 0.95;
   }
 	ellipse(width/2, height/2, ellipseWidth, ellipseWidth);
 
@@ -54,8 +55,8 @@ function draw() {
 	   line(x1, y1, x2, y2);
 	//line(x3, y3, x4, y4);
 			
-	x1 = sin(t/10) * size;
-	y1 = cos(t/10) * size;
+	x1 = sin(t/10) * size + top;
+	y1 = cos(t/10) * size + top;
         x2 = sin(size/10) * 10;
         y2 = cos(size/10) * 10;
 			
