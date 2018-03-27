@@ -41,7 +41,6 @@ function draw() {
     ellipseWidth *= 0.95;
   }
 	ellipse(width/2, height/2, ellipseWidth, ellipseWidth);
-	translate(width/2, height/2);
 
 	for (var j = 0; j < spectrum.lenght; i++) {
 		var amp = spectrum[j];
