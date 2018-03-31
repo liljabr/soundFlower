@@ -1,38 +1,23 @@
-function Bubble(x1, y1, x2, y2) {
-	this.x1 = x1;
-	this.y1 = y1;
-	this.x2 = x2;
-	this.y2 = y2;
-	this.lifespan = 255;
+var bubbles = [];
+var t = 1;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
 	
-	this.display = function() {
-	  stroke(0, this.lifespan);
-		fill(0);
-		//ellipse(this.x1, this.y1, 48, 48);
-		line(this.x1, this.y1, 1, 1);
+function mousePressed() {
+	var b = new Bubble(mouseX, mouseY);
+	bubbles.push(b);
+}
+	
+function draw() {
+  background(255);
+			translate(width / 2, height / 2);
+	for (var i = bubbles.length - 1; i >= 0; i--)  {
+	  bubbles[i].update();
+		bubbles[i].display();
+		if (bubbles[i].isFinished())  {
+		  bubbles.splice(i, 1);
 	}
-	
-	this.isFinished = function() {
-	  if (this.lifespan < 0) {
-		  return true;
-		} else  {
-		  return false;
-	 }
-	}
-	
-	this.update = function() {
-		//this.x1 = this.x1;
-		//this.y1 = this.y1;
-	  this.x1 = this.x1;
-	  this.y1 = this.y1;
-	  this.x2 = this.x2;
-	  this.y2 = this.y2;
-		this.lifespan = this.lifespan - 1;
-	}
-	x1 = sin(t/20) * 100;
-	y1 = cos(t/20) * 100;
-  x2 = sin(t/10) * 10;
-  y2 = cos(t/10) * 10;	
-	
-t += 0.4;
+ }
 }
