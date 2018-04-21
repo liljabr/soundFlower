@@ -18,12 +18,15 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(0);
+
+	fill(255);
+	rect(120, 0, 2000, height);
 	translate(width / 2, height / 2);
 	
 	// analize fft
 	var spectrum = fft.analyze();
-	var maxSpectrum = 90;
+	var maxSpectrum = 50;
 	
 	fft.analyze();
 	//peakDetect.update(fft);
